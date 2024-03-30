@@ -1,4 +1,5 @@
 import { Day } from "./day";
+
 export default class Day3 extends Day{
 
     constructor(cookie: string){
