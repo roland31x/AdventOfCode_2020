@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@types/node": "^20.12.2",
+    "tsx": "^4.7.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.3"
+  }
+}
