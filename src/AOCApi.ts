@@ -6,7 +6,9 @@ export async function Fetch(year: number, day: number, cookie: string) : Promise
     const path = `inputs/day${day}/input.txt`;
 
     if(fs.existsSync(path)){
-        return fs.readFileSync(path, 'utf-8').split("\n").filter((line) => line != "");
+        let toreturn = fs.readFileSync(path, 'utf-8').split("\n");
+        toreturn.pop();
+        return toreturn;
     }
     
     const url = `https://adventofcode.com/${year}/day/${day}/input`;
@@ -24,9 +26,13 @@ export async function Fetch(year: number, day: number, cookie: string) : Promise
     if(!fs.existsSync(`inputs/day${day}`)){
         fs.mkdirSync(`inputs/day${day}`);
     }
+
+
     fs.writeFileSync(path, data);
 
-    return data.split("\n").filter((line) => line != "");
+    let toreturn = fs.readFileSync(path, 'utf-8').split("\n");
+    toreturn.pop();
+    return toreturn;
 }
 
 export async function Submit(year: number, day: number, cookie: string, answer: string, part1 : boolean = true) : Promise<string>{

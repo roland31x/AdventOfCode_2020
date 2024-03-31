@@ -17,7 +17,7 @@ export default class Day3 extends Day{
                 resp++;
             }
             x += 3;
-            y++;
+            y += 1;
         }
 
         return resp.toString();
